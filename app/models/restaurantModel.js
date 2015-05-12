@@ -10,6 +10,16 @@ module.exports = function(mongoose){
     _hours: {type: Schema.Types.ObjectId, ref: 'Hours'},
     _menu: {type: Schema.Types.ObjectId, ref: 'Menu' }
   });
+  
+  restaurantSchema.pre('save',function(next){
+    var currentDate = new Date().now;
+    this.modifiedDate = currentDate;
+    if(!this.createdDate){
+      this.createDate = currentDate;
+    }
+    next();
+  });
+  
   var Restaurant = mongoose.model('Restaurant', restaurantSchema);
   
   return {

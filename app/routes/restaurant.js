@@ -1,7 +1,7 @@
 var RestaurantRouter = function(express, passport, loginChecker, mongoose){
 	var router = new express.Router();
-	var Restaurant = require('../models/restaurantModel.js')(mongoose).Restaurant;
-	var Account = require('../models/accountModel.js')(mongoose).Account;
+	var Restaurant = mongoose.model('Restaurant').Restaurant;
+	var Account = mongoose.model('Account').Account;
 	
 	router.get('/getRestaurants', loginChecker, function(req, res){
 		var user = req.user;
@@ -28,10 +28,19 @@ var RestaurantRouter = function(express, passport, loginChecker, mongoose){
 	
 	router.post('/postCreateRestaurant', loginChecker, function(req, res){
 		var user = req.user;
-		if(!user){
-			return res.send({success: false});
-		}
-		return res.send({success: true});
+		var newRestaurant = new Restaurant({
+			title: req.body.title,
+			address: req.body.address,
+			about: req.body.about,
+			phone: req.body.phone,
+		});
+		
+		newRestaurant.save(function(err){
+			if(err){
+				throw err;
+			}
+			return res.send({success:true, message:"user was created"});
+		});
 	});
 	
 	router.get('/createRestaurant', loginChecker, function(req, res){

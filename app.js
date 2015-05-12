@@ -17,6 +17,14 @@ var app = express();
 
 //==============================CONFIGURATION========================================
 mongoose.connect('mongodb://localhost/androidBuilder');
+
+//load all schemas to be referenced by mongoose
+require('./app/models/restaurantModel.js')(mongoose);
+require('./app/models/userModel.js')(mongoose);
+require('./app/models/menuModel.js')(mongoose);
+require('./app/models/hoursModel.js')(mongoose);
+require('./app/models/accountModel.js')(mongoose);
+
 //configure passport
 passport = require('./app/config/passport')(passport, mongoose);
 

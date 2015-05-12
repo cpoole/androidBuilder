@@ -3,11 +3,9 @@
 // load all the things we need
 var LocalStrategy   = require('passport-local').Strategy;
 
-// load up the user model
-var User            = require('../models/userModel.js');
-
 // expose this function to our app using module.exports
-var configuredPassport = function(passport) {
+var configuredPassport = function(passport,mongoose) {
+    var User= mongoose.model('User').User;
 
     // =========================================================================
     // passport session setup ==================================================

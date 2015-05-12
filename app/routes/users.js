@@ -1,6 +1,6 @@
 
 var UserRouter = function(express, passport, loginChecker,mongoose){
-  var User = require('../models/userModel')(mongoose).User;
+  var User = mongoose.model('User');
   var router = new express.Router();
   var Bcrypt = require('bcrypt');
   
@@ -19,14 +19,14 @@ var UserRouter = function(express, passport, loginChecker,mongoose){
   
       var salt = Bcrypt.genSaltSync(10);
       var hash = Bcrypt.hashSync(req.body.password, salt);
-      newUser = new User({
+      var newUser = new User({
         email: req.body.email,
         password: hash
       });
       
       newUser.save(function(err){
         if(err){
-          res.send('User va')
+          throw err;
         }
         console.log('User created');
         
@@ -37,13 +37,19 @@ var UserRouter = function(express, passport, loginChecker,mongoose){
   
   router.post('/login', function(req, res, next){
     passport.authenticate('local-login', function(err, user, info){
+      console.log(user)
       if(err){
         return next(err);
       }
       if(!user){
         return res.send(401, {success: false, message: 'authentication failed'});
       } 
-      return res.send({success:true, message:'authentication succeeded'});
+      req.logIn(user, function(err){
+        if(err){
+          return next(err);
+        }
+        return res.send({success:true, message:'authentication succeeded'});
+      });
     })(req, res, next);
   });
   

@@ -1,0 +1,13 @@
+{
+  "name": "mean",
+  "dependencies": {
+    "angular": null,
+    "angular-material": null,
+    "angular-resource": null,
+    "angular-cookies": null,
+    "angular-mocks": null,
+    "angular-route": null,
+    "angular-ui-router": null,
+    "material-design-icons": "~1.0.1"
+  }
+}

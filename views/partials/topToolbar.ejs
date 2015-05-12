@@ -1,0 +1,27 @@
+ <div flex>
+    <md-content>
+      <md-toolbar md-scroll-shrink>
+        <div layout="row" class="md-toolbar-tools">
+          <md-button hide-gt-md ng-click="toggleSide()" class="md-icon-button" aria-label="Settings">
+            <md-icon md-svg-icon="/img/icons/menu.svg"></md-icon>
+          </md-button>
+          <span layout="row" hide-sm>
+            <h2>
+              AppBuilder 
+            </h2>
+          </span>
+          <span flex></span>
+          <md-button class="md-icon-button" aria-label="More">
+            <md-icon md-svg-icon="/img/icons/more_vert.svg"></md-icon>
+          </md-button>
+
+        </div>
+      </md-toolbar>
+    </md-content>
+  </div>
+  <div flex layout="row">
+    <md-sidenav md-is-locked-open="$mdMedia('gt-md')" class="md-whiteframe-z2" md-component-id="left">
+      <p>TEST PARAGRAPH</p>
+    </md-sidenav>
+  </div>
+

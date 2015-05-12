@@ -1,0 +1,10 @@
+.toolbardemoBasicUsage md-toolbar md-icon.md-default-theme {
+  color: white; }
+  
+#loginCard {
+  max-width: 500px;
+}
+
+#loginImage {
+  max-width:60%;
+}

@@ -1,0 +1,42 @@
+<html>
+	<head>
+		<% include ../partials/minHead %>
+		<script src="/javascript/homepage.js"></script>
+		<link href="/css/homepage.css" rel="stylesheet"></link>
+	</head>
+	<body>
+		<div flex layout="column" ng-app="homeApp">
+      <div ng-controller="toolSideCtrl">
+			  <% include ../partials/topToolbar %>
+        <md-content layout="row" layout-align="center center" layout-margin id="content">
+          <div id="loginCard">
+            <md-card>
+              <div layout="row" layout-align="center center">
+                <img ng-src="/img/Android_robot.svg" class="md-card-image" id="loginImage"></img>
+              </div>
+              <md-card-content layout-align="center center"  layout="column">
+                <h2 class="md-title">Login</h2>
+                <md-input-container>
+                  <label>Email</label>
+                  <input ng-model="email">
+                </md-input-container>
+                <md-input-container>
+                  <label>Password</label>
+                  <input ng-model="password" type="password">
+                </md-input-container>
+
+              </md-card-content>
+              <div class="md-actions" layout="row" layout-align="end center">
+                <md-button>Forgot?</md-button>
+                <md-button ng-click="signIn()">Sign In</md-button>
+              </div>
+            </md-card>
+          </div>
+        </md-content>
+      <div flex layout="column">
+      </div>
+
+      </div>
+    </div>
+	</body>
+</html>

@@ -20,7 +20,7 @@ module.exports = function(mongoose){
     next();
   });
   
-  var Restaurant = mongoose.model('Restaurant', restaurantSchema);
+  var Restaurant = mongoose.model('Restaurant', restaurantSchema, 'restaurants');
   
   return {
     Restaurant: Restaurant

@@ -1,0 +1,55 @@
+<html>
+  <head>
+    <% include ../partials/minHead %>
+    <script src="/javascript/createEditApp.js"></script>
+    <link href="/css/createEditApp.css" rel="stylesheet"></link>
+  </head>
+  <body>
+    <div flex layout="column" ng-app="homeApp">
+      <div ng-controller="toolSideCtrl">
+        <% include ../partials/topToolbar %>
+        <md-content layout-fill layout="row" layout-align="center center" layout-margin id="content">
+          <div flex-gt-lg="90" flex-gt-sm="90" flex-sm="100" layout-fill id="mainBody">
+            <md-card>
+              <div layout="row" layout-align="center center">
+                <img ng-src="{{card.headerImage}}" class="md-card-image" id="loginImage"></img>
+              </div>
+              <md-card-content layout-align="start center" flex="100" layout-fill layout="column">
+                <h2 class="md-title">Create a New Application</h2>
+                <div layout="row" layout-sm="column" layout-align="space-around center" style="width:100%">
+                  <md-input-container>
+                    <label>Title</label>
+                    <input ng-model="title">
+                  </md-input-container>
+                  <md-input-container>
+                    <label>About</label>
+                    <input ng-model="about">
+                  </md-input-container>
+                </div>
+                <div layout="row" layout-sm="column" layout-align="space-around center" style="width:100%">
+                  <md-input-container>
+                    <label>Address</label>
+                    <input ng-model="address">
+                  </md-input-container>
+                  <md-input-container>
+                    <label>Phone</label>
+                    <input ng-model="phone">
+                  </md-input-container>
+                </div>
+              </md-card-content>
+            </md-card>
+          </div>
+        </md-content>
+        <!-- <div layout="row">
+          <span flex layout-fill></span>
+          <span>
+              <md-button class="md-fab md-primary md-hue-2" aria-label="Profile">
+                <md-icon md-svg-src="/bower_components/material-design-icons/action/svg/production/ic_note_add_48px.svg"></md-icon>
+              </md-button>
+          </span>
+        </div> -->
+
+      </div>
+    </div>
+  </body>
+</html>

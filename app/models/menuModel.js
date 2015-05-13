@@ -18,7 +18,7 @@ module.exports = function(mongoose){
       }   
     ] 
   });
-  var Menu = mongoose.model('Menu', menuSchema);
+  var Menu = mongoose.model('Menu', menuSchema, 'menus');
   return{
     Menu:Menu
   };

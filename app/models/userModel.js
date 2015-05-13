@@ -31,7 +31,7 @@ module.exports = function(mongoose){
     createdDate: {type: Date, default: Date.now},
     updatedDate: {type: Date, default: Date.now},
     lastSignOn: {type: Date, default: Date.now},
-    _Accounts: [{type: Schema.Types.ObjectId, ref: 'Account' }]
+    _restaurants: [{type: Schema.Types.ObjectId, ref: 'Restaurant' }]
   });
   
   userSchema.pre('save',function(next){
@@ -54,7 +54,7 @@ module.exports = function(mongoose){
     return bcrypt.compareSync(password, this.local.password);
   };
   
-  var User = mongoose.model('User', userSchema);
+  var User = mongoose.model('User', userSchema, 'users');
   
   return {
     User: User

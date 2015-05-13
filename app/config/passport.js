@@ -4,8 +4,8 @@
 var LocalStrategy   = require('passport-local').Strategy;
 
 // expose this function to our app using module.exports
-var configuredPassport = function(passport,mongoose) {
-    var User= mongoose.model('User').User;
+var configuredPassport = function(passport,mongoose,User) {
+    
 
     // =========================================================================
     // passport session setup ==================================================

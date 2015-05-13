@@ -8,26 +8,28 @@
 		<div flex layout="column" ng-app="homeApp">
       <div ng-controller="toolSideCtrl">
 			  <% include ../partials/topToolbar %>
-        <md-content layout="row" layout-align="center center" layout-margin id="content">
-          <div ng-repeat="card in Restaurants">
-            <div ng-click="card.clickFunc()" id="profileCard">
-              <md-card>
-                <div layout="row" layout-align="center center">
-                  <img ng-src="{{card.headerImage}}" class="md-card-image" id="loginImage"></img>
-                </div>
-                <md-card-content layout-align="center center"  layout="column">
-                  <h2 class="md-title">{{card.title}}</h2>
-                </md-card-content>
-              </md-card>
+        <div id="mainBody" layout="row" layout-fill>
+          <md-content layout="row" layout-fill layout-align="center center" layout-margin id="content">
+            <div ng-repeat="card in Restaurants">
+              <div ng-click="card.clickFunc()" id="profileCard">
+                <md-card>
+                  <div layout="row" layout-align="center center">
+                    <img ng-src="{{card.headerImage}}" class="md-card-image" id="loginImage"></img>
+                  </div>
+                  <md-card-content layout-align="center center"  layout="column">
+                    <h2 class="md-title">{{card.title}}</h2>
+                  </md-card-content>
+                </md-card>
+              </div>
             </div>
-          </div>
-        </md-content>
-        <div layout="row">
-          <span flex layout-fill></span>
+          </md-content>
+          <span flex></span>
           <span>
-            <md-button ng-click="createNewApp" class="md-fab md-primary md-hue-2" aria-label="Profile">
-              <md-icon md-svg-src="/bower_components/material-design-icons/action/svg/production/ic_note_add_48px.svg"></md-icon>
-            </md-button>
+            <a href="/pages/createEditApp">
+              <md-button class="md-fab md-primary md-hue-2" aria-label="Profile">
+                <md-icon md-svg-src="/bower_components/material-design-icons/action/svg/production/ic_note_add_48px.svg"></md-icon>
+              </md-button>
+            </a>
           </span>
         </div>
 

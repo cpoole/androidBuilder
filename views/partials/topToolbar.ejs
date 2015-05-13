@@ -2,7 +2,7 @@
     <md-content>
       <md-toolbar md-scroll-shrink>
         <div layout="row" class="md-toolbar-tools">
-          <md-button hide-gt-md ng-click="toggleSide()" class="md-icon-button" aria-label="Settings">
+          <md-button hide-gt-lg ng-click="toggleSide()" class="md-icon-button" aria-label="Settings">
             <md-icon md-svg-icon="/img/icons/menu.svg"></md-icon>
           </md-button>
           <span layout="row" hide-sm>
@@ -19,9 +19,10 @@
       </md-toolbar>
     </md-content>
   </div>
-  <div flex layout="row">
-    <md-sidenav md-is-locked-open="$mdMedia('gt-md')" class="md-whiteframe-z2" md-component-id="left">
-      <p>TEST PARAGRAPH</p>
+  <div layout="row">
+    <md-sidenav md-is-locked-open="$mdMedia('gt-lg')" class="md-whiteframe-z2" md-component-id="left">
+      <div layout="column" layout-fill>
+        <p>TEST PARAGRAPH</p>
+      </div>
     </md-sidenav>
-  </div>
 

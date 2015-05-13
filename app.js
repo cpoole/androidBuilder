@@ -18,15 +18,15 @@ var app = express();
 //==============================CONFIGURATION========================================
 mongoose.connect('mongodb://localhost/androidBuilder');
 
-//load all schemas to be referenced by mongoose
-require('./app/models/restaurantModel.js')(mongoose);
-require('./app/models/userModel.js')(mongoose);
-require('./app/models/menuModel.js')(mongoose);
-require('./app/models/hoursModel.js')(mongoose);
-require('./app/models/accountModel.js')(mongoose);
+//load all schemas to be referenced by the additional routers
+var Restaurant = require('./app/models/restaurantModel.js')(mongoose).Restaurant;
+var User = require('./app/models/userModel.js')(mongoose).User;
+var Menu = require('./app/models/menuModel.js')(mongoose).Menu;
+var Hours = require('./app/models/hoursModel.js')(mongoose).Hours;
+var Account = require('./app/models/accountModel.js')(mongoose).Account;
 
 //configure passport
-passport = require('./app/config/passport')(passport, mongoose);
+passport = require('./app/config/passport')(passport, mongoose,User);
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -45,10 +45,10 @@ app.use(flash());
 
 
 var loginChecker = require('./app/helpers/authentication.js');
-var restaurantRoutes = require('./app/routes/restaurant')(express, passport, loginChecker, mongoose);
+var restaurantRoutes = require('./app/routes/restaurant')(express, passport, loginChecker, mongoose, Restaurant, Account);
 var indexRoutes = require('./app/routes/index')(express, passport, loginChecker, mongoose);
 var pageRoutes = require('./app/routes/pages')(express, passport, loginChecker, mongoose);
-var userRoutes = require('./app/routes/users')(express, passport, loginChecker, mongoose);
+var userRoutes = require('./app/routes/users')(express, passport, loginChecker, mongoose, User);
 
 app.use('/', indexRoutes);
 app.use('/restaurant', restaurantRoutes);
@@ -56,14 +56,14 @@ app.use('/pages', pageRoutes);
 app.use('/users', userRoutes);
 
 
-/// catch 404 and forward to error handler
+// catch 404 and forward to error handler
 app.use(function(req, res, next) {
     var err = new Error('Not Found');
     err.status = 404;
     next(err);
 });
 
-/// error handlers
+// error handlers
 
 // development error handler
 // will print stacktrace

@@ -18,7 +18,7 @@ module.exports = function(mongoose){
     _parent:{type:Schema.Types.ObjectId, ref:'Restaurant'}
   });
 
-  var Hours = mongoose.model('Hours', hoursSchema);
+  var Hours = mongoose.model('Hours', hoursSchema, 'hours');
   
   return{
     Hours:Hours

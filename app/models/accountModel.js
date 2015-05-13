@@ -5,7 +5,7 @@ module.exports = function(mongoose){
       _restaurants:[{type: Schema.Types.ObjectId, ref: 'Restaurant'}],
       _admin:{type: Schema.Types.ObjectId, ref: 'User'}
     });
-    var Account = mongoose.model('Account', accountSchema);
+    var Account = mongoose.model('Account', accountSchema, 'accounts');
     return {
       Account:Account
     };

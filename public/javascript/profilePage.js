@@ -5,6 +5,14 @@ homeApp.controller('toolSideCtrl', function($scope,$mdSidenav,$http) {
 		console.log("clicked")
 		$mdSidenav('left').toggle();
 	};
+
+  $http.get('/users/getApps')
+    .success(function(res){
+
+    })
+    .error(function(res){
+
+    })
 	
 	
 });

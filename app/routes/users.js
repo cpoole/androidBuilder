@@ -1,6 +1,5 @@
 
-var UserRouter = function(express, passport, loginChecker,mongoose){
-  var User = mongoose.model('User');
+var UserRouter = function(express, passport, loginChecker,mongoose, User, Account, Restaurant){
   var router = new express.Router();
   var Bcrypt = require('bcrypt');
   
@@ -51,6 +50,19 @@ var UserRouter = function(express, passport, loginChecker,mongoose){
         return res.send({success:true, message:'authentication succeeded'});
       });
     })(req, res, next);
+  });
+  
+  router.get('/getApps', loginChecker, function(req, res){
+    User
+    .findById(req.user._id)
+    .populate('_restaurants')
+    .exec(function(err, user){
+      if(err){
+        throw err;
+      }
+      res.send({success: true, apps:user._restaurants});
+    });
+    
   });
   
   return router;

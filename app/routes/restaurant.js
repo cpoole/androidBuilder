@@ -1,7 +1,5 @@
-var RestaurantRouter = function(express, passport, loginChecker, mongoose){
+var RestaurantRouter = function(express, passport, loginChecker, mongoose, Restaurant, Account){
 	var router = new express.Router();
-	var Restaurant = mongoose.model('Restaurant').Restaurant;
-	var Account = mongoose.model('Account').Account;
 	
 	router.get('/getRestaurants', loginChecker, function(req, res){
 		var user = req.user;
@@ -27,7 +25,6 @@ var RestaurantRouter = function(express, passport, loginChecker, mongoose){
 	});
 	
 	router.post('/postCreateRestaurant', loginChecker, function(req, res){
-		var user = req.user;
 		var newRestaurant = new Restaurant({
 			title: req.body.title,
 			address: req.body.address,
@@ -39,12 +36,8 @@ var RestaurantRouter = function(express, passport, loginChecker, mongoose){
 			if(err){
 				throw err;
 			}
-			return res.send({success:true, message:"user was created"});
+			return res.send({success:true, message:"restaurant was created"});
 		});
-	});
-	
-	router.get('/createRestaurant', loginChecker, function(req, res){
-		var user = req.user;
 	});
 	
 	return router;

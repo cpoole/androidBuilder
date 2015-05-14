@@ -8,11 +8,24 @@ homeApp.controller('toolSideCtrl', function($scope,$mdSidenav,$http) {
 
   $http.get('/users/getApps')
     .success(function(res){
-
+      console.log(res);
+      $scope.Restaurants = res.apps;
+    
     })
     .error(function(res){
 
     })
+
+  $scope.clickFunc = function(cardID){
+    console.log("clicked")
+    window.location = '/pages/createEditApp?id='+cardID;
+    // $http.get('/pages/createEditApp', {
+    //   params:{id : cardID}
+    // })
+    //   .success(function(res){
+    //     window
+    //   })
+  }
 	
 	
 });

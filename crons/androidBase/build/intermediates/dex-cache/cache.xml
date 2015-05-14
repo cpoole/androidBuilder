@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        jar="/home/connor/git/punchbug/android/SunninCafe/app/build/intermediates/exploded-aar/com.android.support/recyclerview-v7/21.0.3/classes.jar"
+        jumboMode="false"
+        revision="21.1.1"
+        sha1="4b8945fc23a7461c6fdde15753456d64b0a9358b">
+        <dex dex="/home/connor/git/punchbug/android/SunninCafe/app/build/intermediates/pre-dexed/debug/classes-ff4a10dd30baf46584567327a3d16ce18283edce.jar" />
+    </item>
+    <item
+        jar="/home/connor/git/punchbug/android/SunninCafe/app/build/intermediates/exploded-aar/me.dm7.barcodescanner/zbar/1.5/libs/armeabi.jar"
+        jumboMode="false"
+        revision="21.1.1"
+        sha1="f9b796c889e398a8fd6b2f997b94c101e8a9dbcb">
+        <dex dex="/home/connor/git/punchbug/android/SunninCafe/app/build/intermediates/pre-dexed/debug/armeabi-400ff8103edfe421bab527fe5a27a61dff814f65.jar" />
+    </item>
+    <item
+        jar="/home/connor/git/punchbug/android/SunninCafe/app/build/intermediates/exploded-aar/com.android.support/support-v4/21.0.3/classes.jar"
+        jumboMode="false"
+        revision="21.1.1"
+        sha1="2c91c949a45a21cdecf26e03951e46c7beec9ad8">
+        <dex dex="/home/connor/git/punchbug/android/SunninCafe/app/build/intermediates/pre-dexed/debug/classes-12ac880542f04f2461d0b597476b8b025bf03561.jar" />
+    </item>
+    <item
+        jar="/home/connor/Downloads/SunninCafe/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.3/classes.jar"
+        jumboMode="false"
+        revision="21.1.1"
+        sha1="81d42bf983a8741f4888a6e333e454e4a5e0eeb7">
+        <dex dex="/home/connor/Downloads/SunninCafe/app/build/intermediates/pre-dexed/debug/classes-876df61adb2965ac6b9f3e11c137dbdfcca85e1f.jar" />
+    </item>
+    <item
+        jar="/home/connor/git/punchbug/android/SunninCafe/app/libs/armeabi-v7a.jar"
+        jumboMode="false"
+        revision="21.1.1"
+        sha1="1d1c924a0f3fb116c770f07a992a1d9fff5365b9">
+        <dex dex="/home/connor/git/punchbug/android/SunninCafe/app/build/intermediates/pre-dexed/debug/armeabi-v7a-7c3d114025777cb6d0ee6003bac2d7c3b6844b50.jar" />
+    </item>
+    <item
+        jar="/home/connor/git/punchbug/android/SunninCafe/app/build/intermediates/exploded-aar/me.dm7.barcodescanner/zbar/1.5/classes.jar"
+        jumboMode="false"
+        revision="21.1.1"
+        sha1="4b10baf38cb190650e6231f136e189a27b70c56b">
+        <dex dex="/home/connor/git/punchbug/android/SunninCafe/app/build/intermediates/pre-dexed/debug/classes-6fe9434c4c2e3973fd4c4d870f78392503a9c5c8.jar" />
+    </item>
+    <item
+        jar="/home/connor/Downloads/SunninCafe/app/libs/armeabi.jar"
+        jumboMode="false"
+        revision="21.1.1"
+        sha1="f9b796c889e398a8fd6b2f997b94c101e8a9dbcb">
+        <dex dex="/home/connor/Downloads/SunninCafe/app/build/intermediates/pre-dexed/debug/armeabi-14f1ba1e3fb51dbcffe97ca965a6d8eaebe74901.jar" />
+    </item>
+    <item
+        jar="/home/connor/Downloads/SunninCafe/app/build/intermediates/exploded-aar/me.dm7.barcodescanner/core/1.5/classes.jar"
+        jumboMode="false"
+        revision="21.1.1"
+        sha1="85fd787f604f8fc6564ff7d4cce05f6522f180ab">
+        <dex dex="/home/connor/Downloads/SunninCafe/app/build/intermediates/pre-dexed/debug/classes-b37f6a3a85641ea1c8c3554546603b97a0d8ff8a.jar" />
+    </item>
+    <item
+        jar="/home/connor/Downloads/SunninCafe/app/build/intermediates/exploded-aar/me.dm7.barcodescanner/zbar/1.5/libs/armeabi-v7a.jar"
+        jumboMode="false"
+        revision="21.1.1"
+        sha1="1d1c924a0f3fb116c770f07a992a1d9fff5365b9">
+        <dex dex="/home/connor/Downloads/SunninCafe/app/build/intermediates/pre-dexed/debug/armeabi-v7a-3e636649ae87054bc6ea7c6048d08b45fb4a4303.jar" />
+    </item>
+    <item
+        jar="/home/connor/Downloads/SunninCafe/app/libs/zbar.jar"
+        jumboMode="false"
+        revision="21.1.1"
+        sha1="7bbdf7ba57a8a157c0cad51e455609c70887812e">
+        <dex dex="/home/connor/Downloads/SunninCafe/app/build/intermediates/pre-dexed/debug/zbar-f6c7750750ff135c5738aa90b02b8d235a35d5bf.jar" />
+    </item>
+    <item
+        jar="/home/connor/.gradle/caches/modules-2/files-2.1/com.google.code.gson/gson/2.3/5fc52c41ef0239d1093a1eb7c3697036183677ce/gson-2.3.jar"
+        jumboMode="false"
+        revision="21.1.1"
+        sha1="5fc52c41ef0239d1093a1eb7c3697036183677ce">
+        <dex dex="/home/connor/Downloads/SunninCafe/app/build/intermediates/pre-dexed/debug/gson-2.3-45c64fe3daf7f35bb507716c8e229f8f28d5e88f.jar" />
+    </item>
+    <item
+        jar="/home/connor/git/punchbug/android/SunninCafe/app/build/intermediates/exploded-aar/com.android.support/support-v4/21.0.3/libs/internal_impl-21.0.3.jar"
+        jumboMode="false"
+        revision="21.1.1"
+        sha1="01ec05bfbafcc07646ba813000bf2ef11742dd03">
+        <dex dex="/home/connor/git/punchbug/android/SunninCafe/app/build/intermediates/pre-dexed/debug/internal_impl-21.0.3-1577721012c9ff5998cec89e9846a510adf99b26.jar" />
+    </item>
+    <item
+        jar="/home/connor/git/punchbug/android/SunninCafe/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.3/classes.jar"
+        jumboMode="false"
+        revision="21.1.1"
+        sha1="81d42bf983a8741f4888a6e333e454e4a5e0eeb7">
+        <dex dex="/home/connor/git/punchbug/android/SunninCafe/app/build/intermediates/pre-dexed/debug/classes-8d7262acb5b1bc5b96667a21a1b1ce3d15d6fede.jar" />
+    </item>
+    <item
+        jar="/home/connor/git/punchbug/android/SunninCafe/app/libs/x86.jar"
+        jumboMode="false"
+        revision="21.1.1"
+        sha1="4cec3c6e129913967ff2d71da18e2daf6bd1b565">
+        <dex dex="/home/connor/git/punchbug/android/SunninCafe/app/build/intermediates/pre-dexed/debug/x86-88e0f4ddfe8ae41e3a7cad854f0cb0690194e772.jar" />
+    </item>
+    <item
+        jar="/home/connor/Downloads/android-sdk-linux/extras/android/m2repository/com/android/support/support-annotations/21.0.3/support-annotations-21.0.3.jar"
+        jumboMode="false"
+        revision="21.1.1"
+        sha1="4b74cefe1f0c1b819e7260c8627a14674e37fd35">
+        <dex dex="/home/connor/Downloads/SunninCafe/app/build/intermediates/pre-dexed/debug/support-annotations-21.0.3-27f25e308678afe5cf314fff960aa9ba85056b64.jar" />
+    </item>
+    <item
+        jar="/home/connor/Downloads/SunninCafe/app/build/intermediates/exploded-aar/me.dm7.barcodescanner/zbar/1.5/libs/x86.jar"
+        jumboMode="false"
+        revision="21.1.1"
+        sha1="4cec3c6e129913967ff2d71da18e2daf6bd1b565">
+        <dex dex="/home/connor/Downloads/SunninCafe/app/build/intermediates/pre-dexed/debug/x86-e5f8a47582dd2ad7743a7827a2d980566df8c92f.jar" />
+    </item>
+    <item
+        jar="/home/connor/git/punchbug/android/SunninCafe/app/build/intermediates/exploded-aar/me.dm7.barcodescanner/core/1.5/classes.jar"
+        jumboMode="false"
+        revision="21.1.1"
+        sha1="85fd787f604f8fc6564ff7d4cce05f6522f180ab">
+        <dex dex="/home/connor/git/punchbug/android/SunninCafe/app/build/intermediates/pre-dexed/debug/classes-9aa625580a0d127b5ee44ce84432999b499d9b43.jar" />
+    </item>
+    <item
+        jar="/home/connor/Downloads/SunninCafe/app/build/intermediates/exploded-aar/me.dm7.barcodescanner/zbar/1.5/classes.jar"
+        jumboMode="false"
+        revision="21.1.1"
+        sha1="4b10baf38cb190650e6231f136e189a27b70c56b">
+        <dex dex="/home/connor/Downloads/SunninCafe/app/build/intermediates/pre-dexed/debug/classes-8e3a45c72daf656c694a5a0894d42f154d57924e.jar" />
+    </item>
+    <item
+        jar="/home/connor/Downloads/SunninCafe/app/build/intermediates/exploded-aar/com.android.support/recyclerview-v7/21.0.3/classes.jar"
+        jumboMode="false"
+        revision="21.1.1"
+        sha1="4b8945fc23a7461c6fdde15753456d64b0a9358b">
+        <dex dex="/home/connor/Downloads/SunninCafe/app/build/intermediates/pre-dexed/debug/classes-4083018f15f6f27786a76094ab2d23bc9506ded9.jar" />
+    </item>
+    <item
+        jar="/home/connor/Downloads/SunninCafe/app/build/intermediates/exploded-aar/com.android.support/support-v4/21.0.3/classes.jar"
+        jumboMode="false"
+        revision="21.1.1"
+        sha1="2c91c949a45a21cdecf26e03951e46c7beec9ad8">
+        <dex dex="/home/connor/Downloads/SunninCafe/app/build/intermediates/pre-dexed/debug/classes-c462bd9667f87688cade422b52d6c06b48639f25.jar" />
+    </item>
+    <item
+        jar="/home/connor/git/punchbug/android/SunninCafe/app/build/intermediates/exploded-aar/me.dm7.barcodescanner/zbar/1.5/libs/zbar.jar"
+        jumboMode="false"
+        revision="21.1.1"
+        sha1="7bbdf7ba57a8a157c0cad51e455609c70887812e">
+        <dex dex="/home/connor/git/punchbug/android/SunninCafe/app/build/intermediates/pre-dexed/debug/zbar-c606cea0838564fbd6b98156cf3fb6d1327294ea.jar" />
+    </item>
+    <item
+        jar="/home/connor/Downloads/SunninCafe/app/build/intermediates/exploded-aar/com.android.support/support-v4/21.0.3/libs/internal_impl-21.0.3.jar"
+        jumboMode="false"
+        revision="21.1.1"
+        sha1="01ec05bfbafcc07646ba813000bf2ef11742dd03">
+        <dex dex="/home/connor/Downloads/SunninCafe/app/build/intermediates/pre-dexed/debug/internal_impl-21.0.3-292d3c6b1ddd724d267bf2f841f12808f3bb3091.jar" />
+    </item>
+
+</items>

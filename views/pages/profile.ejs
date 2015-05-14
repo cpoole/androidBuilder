@@ -9,9 +9,9 @@
       <div ng-controller="toolSideCtrl">
 			  <% include ../partials/topToolbar %>
         <div id="mainBody" layout="row" layout-fill>
-          <md-content layout="row" layout-fill layout-align="center center" layout-margin id="content">
+          <md-content flex layout="row" layout-sm="column" layout-wrap layout-align="center start" layout-align-sm="start center" id="content">
             <div ng-repeat="card in Restaurants">
-              <div ng-click="card.clickFunc()" id="profileCard">
+              <div id="profileCard">
                 <md-card>
                   <div layout="row" layout-align="center center">
                     <img ng-src="{{card.headerImage}}" class="md-card-image" id="loginImage"></img>
@@ -19,11 +19,11 @@
                   <md-card-content layout-align="center center"  layout="column">
                     <h2 class="md-title">{{card.title}}</h2>
                   </md-card-content>
+                  <md-button ng-click="clickFunc(card._id)" class="md-raised md-primary">Edit</md-button>
                 </md-card>
               </div>
             </div>
           </md-content>
-          <span flex></span>
           <span>
             <a href="/pages/createEditApp">
               <md-button class="md-fab md-primary md-hue-2" aria-label="Profile">

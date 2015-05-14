@@ -6,16 +6,16 @@ homeApp.controller('toolSideCtrl', function($scope,$mdSidenav,$http) {
     $mdSidenav('left').toggle();
   };
 
-  $submitRestaurant = function(){
+  $scope.submitRestaurant = function(){
     jsonData = {};
     jsonData.title = $scope.title;
     jsonData.about = $scope.about;
     jsonData.address = $scope.address;
     jsonData.phone = $scope.phone;
 
-    $http.post('/postCreateRestaurant', jsonData)
+    $http.post('/restaurant/postCreateRestaurant', jsonData)
       .success(function(response){
-        window.location('/pages/profile')
+        window.location='/pages/profile'
       })
       .error(function(response){
 

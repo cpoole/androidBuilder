@@ -7,6 +7,8 @@ module.exports = function(mongoose){
     phone: {type: String, required: true},
     createdDate: {type: Date, default: Date.now},
     modifiedDate: {type: Date, default:Date.now},
+    statusInt: {type: Number},
+    version: {type: String},
     _hours: {type: Schema.Types.ObjectId, ref: 'Hours'},
     _menu: {type: Schema.Types.ObjectId, ref: 'Menu' }
   });

@@ -60,6 +60,7 @@ var UserRouter = function(express, passport, loginChecker,mongoose, User, Accoun
       if(err){
         throw err;
       }
+      console.log(user);
       res.send({success: true, apps:user._restaurants});
     });
     

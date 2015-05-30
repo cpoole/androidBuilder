@@ -31,9 +31,9 @@
     <string name="parallaxHeader_menu">Appetizers</string>
     <string-array
         name="pager_adapter_titles">
-        {% for category in app.menu.Categories %}
-        <item{{ category.title }}</item>
-        {% endif %}
+        {% for category in app._menu.Categories %}
+        <item>"{{ category.title }}"</item>
+        {% endfor %}
     </string-array>
 
 </resources>

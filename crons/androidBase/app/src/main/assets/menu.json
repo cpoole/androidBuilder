@@ -1,0 +1,19 @@
+[
+  {% for i,category in enumerate(app._menu.Categories) %}
+    {% for j,entry in enumerate(category) %}
+      {
+        "type": "{{ category.title }}",
+        "title": "{{ entry.title }}",
+        "description" : "{{ entry.description }}",
+        "price": "{{ entry.price }}"
+      }{% if i!=len(app._menu.Categories) %}
+        {% if j!=len(category) %}
+        ,
+        {% endif %}
+        {% endif %}
+
+    {% endfor %}
+  {% endfor %}
+  
+]
+

@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<views.customRelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/root_menu_layout"
+    android:animateLayoutChanges="true"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:clipToPadding="false"
+    >
+    <RelativeLayout
+        android:id="@+id/header_layout"
+        android:animateLayoutChanges="true"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:clipToPadding="false"
+        android:background="@color/myWindowBackground"
+        android:elevation="5dp"
+        >
+        <ImageView
+            android:id="@+id/header_image"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/header_image_height"
+            android:src="@drawable/bg1"
+            android:scaleType="centerCrop"
+            android:elevation="3dp"/>
+        <TextView
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:textStyle="bold"
+            android:textSize="36sp"
+            android:textColor="@color/white"
+            android:text="@string/parallaxHeader_menu"
+            android:id="@+id/menuHeader_text" />
+        <pager.PagerSlidingTabStrip
+            android:id="@+id/tabs"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/slidingTab_height"
+            android:background="?attr/colorPrimary"
+            android:layout_below="@+id/header_image"
+            android:elevation="8dp"
+            android:clipToPadding="false"/>
+    </RelativeLayout>
+
+    <android.support.v4.view.ViewPager
+        android:layout_below="@+id/header_layout"
+        android:id="@+id/pager"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+</views.customRelativeLayout>

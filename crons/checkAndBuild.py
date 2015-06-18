@@ -4,6 +4,8 @@ import datetime
 import os
 import shutil
 import os.path
+import fnmatch
+import glob
 
 client = MongoClient()
 client = MongoClient('localhost',27017)
@@ -28,15 +30,19 @@ excludeList=[
         'resources-debug.ap_'
          
         ]
-filesToRender=[
-        'app/src/main/assets/menu.json',
-        'app/src/main/java/activities/MainActivity.java',
-        'app/src/main/res/values/strings.xml',
-        'app/src/main/java/fragments/MenuCategoryFragment.java',
-        'app/src/main/AndroidManifest.xml',
-        'app/build.gradle'
-        ]
+excludes = [
+        '*build*',
+        '*.iml',
+        '*.jar',
+        '*.png',
+        '*.jpg',
+        '*.ap_',
+        '*.pro',
+        '*.dex',
+        '*.bin'
+]
 
+#excludes = r'|'.join([fnmatch.translate(x) for x in excludes]) or r'$.'
 #This will query the database for any applications that are in status 2 and generate a new build
 
 for app in apps.find():
@@ -50,7 +56,8 @@ for app in apps.find():
         PATH = os.path.dirname(os.path.abspath(__file__))
         TEMPLATE_ENVIRONMENT = Environment(
             autoescape=False,
-            loader=FileSystemLoader(os.path.join(PATH, 'androidBase')),
+           # loader=FileSystemLoader(os.path.join(PATH, 'androidBase')),
+            loader=FileSystemLoader(PATH),
             trim_blocks=False) 
 
         #Discover the version of the app so that similar versions will overwrite and
@@ -66,6 +73,24 @@ for app in apps.find():
 
         #shutil.copytree(os.path.join(PATH, 'androidBase'), os.path.join(PATH, 'completedBuilds/' + newVersion))
         for root, subdirs, files in os.walk("androidBase"):
+            for dire in subdirs:
+                print dire
+            print "+++++++++++++++++++++++++"
+            #subdirs[:] = fnmatch.filter(subdirs,'app*')
+
+            tempFiles = []           
+            for f in files:
+                allowed = True
+                for pattern in excludes:
+                    if fnmatch.fnmatch(f,pattern) or fnmatch.fnmatch(os.path.join(root,f),pattern):
+                        allowed = False
+                        break
+                if allowed == True:
+                    tempFiles.append(f)
+            files = tempFiles
+
+
+           # print "=================="
             for filename in files:
 
                 output = 'completedBuilds/' + newVersion + '/' + filename 
@@ -80,23 +105,18 @@ for app in apps.find():
                         #tempNameArray = entry.split('/')
                         #tempName = tempNameArray[len(tempNameArray)-1]
                         print "final dir= " + os.path.join(root,filename)
-                        location = os.path.join(PATH, os.path.join(root,filename))
-                        filer = TEMPLATE_ENVIRONMENT.get_template().render({'app' : app})
+                        location = os.path.join(root,filename)
+                        print "template location = " + location
+                        filer = TEMPLATE_ENVIRONMENT.get_template(os.path.join(root,filename)).render({'app' : app})
                         f.write(filer)
 
-
-#        #iterate through our "templates" and render the files passing in the app dictionary
-#        for entry in filesToRender:
-#            output = 'completedBuilds/' + newVersion + '/' +  entry
-#            with open(os.path.join(PATH,output), 'w') as f:
-#                entry = 'androidBase/' + entry
-#                tempNameArray = entry.split('/')
+##        #iterate through our "templates" and render the files passing in the app dictionary
+##        for entry in filesToRender:
+##            output = 'completedBuilds/' + newVersion + '/' +  entry
+##            with open(os.path.join(PATH,output), 'w') as f:
+##                entry = 'androidBase/' + entry
+##                tempNameArray = entry.split('/')
 #                tempName = tempNameArray[len(tempNameArray)-1]
 #                filer = TEMPLATE_ENVIRONMENT.get_template(tempName).render({'app' : app})
 #                f.write(filer)
 #
-        
-
-
-
-        

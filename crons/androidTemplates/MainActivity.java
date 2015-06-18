@@ -159,7 +159,7 @@ public class MainActivity extends ActionBarActivity implements NavigationDrawerC
                      //   .commit();
                 break;
             case 3:
-                startActivity(newPhoneCallIntent({{app.phone}}));
+                startActivity(newPhoneCallIntent("{{app.phone}}"));
                 break;
             case 4:
                 //fragmentManager.beginTransaction().replace(R.id.container, OurStoryFragment.newInstance(position + 1))

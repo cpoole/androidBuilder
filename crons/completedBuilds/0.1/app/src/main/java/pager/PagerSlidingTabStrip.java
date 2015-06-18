@@ -30,8 +30,10 @@ import android.view.ViewTreeObserver.OnGlobalLayoutListener;
 import android.widget.HorizontalScrollView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+
 import java.util.Locale;
-import punchbug.sunnincafe.R;
+
+import punchbug.sunninCafe.R;
 
 public class PagerSlidingTabStrip extends HorizontalScrollView {
 

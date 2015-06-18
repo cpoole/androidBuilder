@@ -11,9 +11,9 @@ import android.widget.TextView;
 
 import java.util.List;
 
+import punchbug.sunninCafe.R;
 import punchbug.sunnincafe.NavigationDrawerCallbacks;
 import punchbug.sunnincafe.NavigationItem;
-import punchbug.sunnincafe.R;
 
 public class NavigationDrawerAdapter extends RecyclerView.Adapter<NavigationDrawerAdapter.ViewHolder> {
 

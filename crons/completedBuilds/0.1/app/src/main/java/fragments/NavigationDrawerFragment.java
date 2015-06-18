@@ -19,9 +19,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 import adapters.NavigationDrawerAdapter;
+import punchbug.sunninCafe.R;
 import punchbug.sunnincafe.NavigationDrawerCallbacks;
 import punchbug.sunnincafe.NavigationItem;
-import punchbug.sunnincafe.R;
 
 public class NavigationDrawerFragment extends Fragment implements NavigationDrawerCallbacks {
     private static final String PREF_USER_LEARNED_DRAWER = "navigation_drawer_learned";

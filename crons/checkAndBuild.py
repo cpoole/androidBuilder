@@ -13,6 +13,21 @@ db = client.androidBuilder
 apps = db.restaurants
 hours = db.hours
 menu = db.menus
+excludeList=[
+        'gradlew',
+        'model_data.bin',
+        'cache.xml',
+        'gradle.iml',
+        'gradle-wrapper.properties',
+        'gradle-wrapper.jar',
+        'proguard-rules.pro',
+        'app.iml',
+        '.gitignore',
+        'classes.dex',
+        'resources-debug-test.ap_',
+        'resources-debug.ap_'
+         
+        ]
 filesToRender=[
         'app/src/main/assets/menu.json',
         'app/src/main/java/activities/MainActivity.java',
@@ -35,7 +50,7 @@ for app in apps.find():
         PATH = os.path.dirname(os.path.abspath(__file__))
         TEMPLATE_ENVIRONMENT = Environment(
             autoescape=False,
-            loader=FileSystemLoader(os.path.join(PATH, 'androidTemplates')),
+            loader=FileSystemLoader(os.path.join(PATH, 'androidBase')),
             trim_blocks=False) 
 
         #Discover the version of the app so that similar versions will overwrite and
@@ -47,18 +62,39 @@ for app in apps.find():
         #set completed builds output directory and create it if it does not exist
         directory = os.path.join(PATH, ('completedBuilds/' + newVersion))
         if not os.path.exists(directory):
-            shutil.copytree(os.path.join(PATH, 'androidBase'), os.path.join(PATH, 'completedBuilds/' + newVersion))
+            os.mkdir(directory)
 
-        #iterate through our "templates" and render the files passing in the app dictionary
-        for entry in filesToRender:
-            output = 'completedBuilds/' + newVersion + '/' +  entry
-            with open(os.path.join(PATH,output), 'w') as f:
-                entry = 'androidBase/' + entry
-                tempNameArray = entry.split('/')
-                tempName = tempNameArray[len(tempNameArray)-1]
-                filer = TEMPLATE_ENVIRONMENT.get_template(tempName).render({'app' : app})
-                f.write(filer)
+        #shutil.copytree(os.path.join(PATH, 'androidBase'), os.path.join(PATH, 'completedBuilds/' + newVersion))
+        for root, subdirs, files in os.walk("androidBase"):
+            for filename in files:
 
+                output = 'completedBuilds/' + newVersion + '/' + filename 
+                print "/////////////" 
+                print "filename= " + filename 
+                print  "////////////////"
+                print "path= " + PATH
+                if filename not in excludeList:
+
+                    with open(os.path.join(PATH,output), 'w') as f:
+                        #entry = 'androidBase/' + entry
+                        #tempNameArray = entry.split('/')
+                        #tempName = tempNameArray[len(tempNameArray)-1]
+                        print "final dir= " + os.path.join(root,filename)
+                        location = os.path.join(PATH, os.path.join(root,filename))
+                        filer = TEMPLATE_ENVIRONMENT.get_template().render({'app' : app})
+                        f.write(filer)
+
+
+#        #iterate through our "templates" and render the files passing in the app dictionary
+#        for entry in filesToRender:
+#            output = 'completedBuilds/' + newVersion + '/' +  entry
+#            with open(os.path.join(PATH,output), 'w') as f:
+#                entry = 'androidBase/' + entry
+#                tempNameArray = entry.split('/')
+#                tempName = tempNameArray[len(tempNameArray)-1]
+#                filer = TEMPLATE_ENVIRONMENT.get_template(tempName).render({'app' : app})
+#                f.write(filer)
+#
         
 
 

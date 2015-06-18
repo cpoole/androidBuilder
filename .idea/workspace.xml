@@ -2,13 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4b50931e-eb5d-4c45-a4b3-d568b442fcbf" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/crons/.checkAndBuild.py.swp" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/crons/androidTemplates/AndroidManifest.xml" afterPath="$PROJECT_DIR$/crons/androidTemplates/AndroidManifest.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/crons/androidTemplates/MenuCategoryFragment.java" afterPath="$PROJECT_DIR$/crons/androidTemplates/MenuCategoryFragment.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/crons/checkAndBuild.py" afterPath="$PROJECT_DIR$/crons/checkAndBuild.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/crons/androidTemplates/menu.json" afterPath="$PROJECT_DIR$/crons/androidTemplates/menu.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/crons/androidTemplates/strings.xml" afterPath="$PROJECT_DIR$/crons/androidTemplates/strings.xml" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/crons/completedBuilds/0.1/gradle/gradle.iml" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="androidBuilder.iws" />

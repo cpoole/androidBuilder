@@ -38,8 +38,8 @@ import fragments.NavigationDrawerFragment;
 import fragments.PunchCardFragment;
 import managers.menuManager;
 import managers.userManager;
-import punchbug.sunnincafe.NavigationDrawerCallbacks;
-import punchbug.sunnincafe.R;
+import punchbug.{{app.title}}.NavigationDrawerCallbacks;
+import punchbug.{{app.title}}.R;
 
 
 public class MainActivity extends ActionBarActivity implements NavigationDrawerCallbacks {

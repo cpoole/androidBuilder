@@ -19,7 +19,7 @@ import adapters.myPagerAdapter;
 import listeners.RelativeLayoutOnGestureListener;
 import listeners.ViewPagerChangeListener;
 import pager.PagerSlidingTabStrip;
-import punchbug.sunninCafe.R;
+import punchbug.sunnincafe.R;
 import views.customRelativeLayout;
 
 public class MenuFragment extends Fragment {
@@ -65,7 +65,7 @@ public class MenuFragment extends Fragment {
             }
         });
 
-        customPagerAdapter = new myPagerAdapter(getActivity().getSupportFragmentManager(), getActivity().getApplicationContext());
+        customPagerAdapter = new myPagerAdapter(getActivity().getSupportFragmentManager());
         mViewPager.setAdapter(customPagerAdapter);
 
         mSlidingTabStrip = (PagerSlidingTabStrip) rootView.findViewById(R.id.tabs);

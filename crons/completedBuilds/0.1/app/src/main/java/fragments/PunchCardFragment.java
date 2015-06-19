@@ -5,15 +5,15 @@ package fragments;
  */
 
 import android.app.Activity;
-import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
 
 import managers.userManager;
-import punchbug.sunninCafe.R;
+import punchbug.sunnincafe.R;
 import views.DrawView;
 import views.punchMark;
 

@@ -26,7 +26,7 @@ import DAO.menuItem;
 import activities.MainActivity;
 import adapters.ParallaxRecyclerAdapter;
 import managers.menuManager;
-import punchbug.sunninCafe.R;
+import punchbug.sunnincafe.R;
 
 public class MenuCategoryFragment extends Fragment {
     private RecyclerView recyclerView;

@@ -46,7 +46,6 @@ excludes = [
 #This will query the database for any applications that are in status 2 and generate a new build
 
 for app in apps.find():
-    print app
     if(app['statusInt'] == 2):
         #app['_hours'] = hours.find_one({'_id': ObjectId(app['_hours'])})
         #fetch menu for this applicaiton id
@@ -84,13 +83,18 @@ for app in apps.find():
                 if allowed == True:
                     tempFiles.append(f)
             files = tempFiles
-            for filename in files:
 
-                output = 'completedBuilds/' + newVersion + '/' + filename 
+            for filename in files:
                 if filename not in excludeList:
+                    rootArray = root.split('/')
+                    newRoot=""
+                    for i in range(1, len(rootArray)):
+                        newRoot += rootArray[i] + "/"
+                    output = 'completedBuilds/' + newVersion + '/' + os.path.join(newRoot,filename)
+                    print output
                     with open(os.path.join(PATH,output), 'w') as f:
                         location = os.path.join(root,filename)
-                        print location
+                        #print location
                         filer = TEMPLATE_ENVIRONMENT.get_template(os.path.join(root,filename)).render({'app' : app})
                         f.write(filer)
 

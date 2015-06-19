@@ -1,7 +1,5 @@
 package adapters;
 
-import android.content.Context;
-import android.content.res.Resources;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentStatePagerAdapter;
@@ -9,7 +7,6 @@ import android.util.SparseArray;
 import android.view.ViewGroup;
 
 import fragments.MenuCategoryFragment;
-import punchbug.sunninCafe.R;
 
 /**
  * Created by connor on 1/5/15.
@@ -17,13 +14,12 @@ import punchbug.sunninCafe.R;
 public class myPagerAdapter extends FragmentStatePagerAdapter {
 
     SparseArray<Fragment> registeredFragments = new SparseArray<Fragment>();
-    Resources res;
+    Resources res = getResources();
 
     private final String[] TITLES = res.getStringArray(R.array.pager_adapter_titles);
 
-    public myPagerAdapter(FragmentManager fm, Context c) {
+    public myPagerAdapter(FragmentManager fm) {
         super(fm);
-        res = c.getResources();
     }
 
     @Override

@@ -19,7 +19,7 @@ import java.util.List;
 import me.dm7.barcodescanner.zbar.BarcodeFormat;
 import me.dm7.barcodescanner.zbar.Result;
 import me.dm7.barcodescanner.zbar.ZBarScannerView;
-import punchbug.sunninCafe.R;
+import punchbug.sunnincafe.R;
 import zbar.MessageDialogFragment;
 
 public class zBarScanner extends ActionBarActivity implements MessageDialogFragment.MessageDialogListener,

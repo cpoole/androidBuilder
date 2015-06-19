@@ -30,4 +30,3 @@ client = MongoClient('localhost',27017)
 db = client.androidBuilder
 menus = db.menus
 menus.insert_one(menu)
-

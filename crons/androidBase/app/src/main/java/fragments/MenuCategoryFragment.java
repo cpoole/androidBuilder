@@ -98,9 +98,9 @@ public class MenuCategoryFragment extends Fragment {
         super.onActivityCreated(savedInstanceState);
         final ArrayList<menuItem> foodEntries;
         switch (getArguments().getInt(ARG_SECTION_NUMBER)) {
-            {% for index, category in enumerate(app._menu.Categories) %}
-            case {{ index }}:
-                foodEntries = menuManager.getCategory({{ category.title }});
+            {% for category in app._menu.Categories %}
+            case {{ loop.index }}:
+                foodEntries = menuManager.getCategory("{{ category.title }}");
                 break;
             {% endfor %}
             default:

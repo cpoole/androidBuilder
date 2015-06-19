@@ -39,13 +39,14 @@ excludes = [
         '*.ap_',
         '*.pro',
         '*.dex',
+        '*.swp',
         '*.bin'
 ]
 
-#excludes = r'|'.join([fnmatch.translate(x) for x in excludes]) or r'$.'
 #This will query the database for any applications that are in status 2 and generate a new build
 
 for app in apps.find():
+    print app
     if(app['statusInt'] == 2):
         #app['_hours'] = hours.find_one({'_id': ObjectId(app['_hours'])})
         #fetch menu for this applicaiton id
@@ -73,11 +74,6 @@ for app in apps.find():
 
         #shutil.copytree(os.path.join(PATH, 'androidBase'), os.path.join(PATH, 'completedBuilds/' + newVersion))
         for root, subdirs, files in os.walk("androidBase"):
-            for dire in subdirs:
-                print dire
-            print "+++++++++++++++++++++++++"
-            #subdirs[:] = fnmatch.filter(subdirs,'app*')
-
             tempFiles = []           
             for f in files:
                 allowed = True
@@ -88,35 +84,13 @@ for app in apps.find():
                 if allowed == True:
                     tempFiles.append(f)
             files = tempFiles
-
-
-           # print "=================="
             for filename in files:
 
                 output = 'completedBuilds/' + newVersion + '/' + filename 
-                print "/////////////" 
-                print "filename= " + filename 
-                print  "////////////////"
-                print "path= " + PATH
                 if filename not in excludeList:
-
                     with open(os.path.join(PATH,output), 'w') as f:
-                        #entry = 'androidBase/' + entry
-                        #tempNameArray = entry.split('/')
-                        #tempName = tempNameArray[len(tempNameArray)-1]
-                        print "final dir= " + os.path.join(root,filename)
                         location = os.path.join(root,filename)
-                        print "template location = " + location
+                        print location
                         filer = TEMPLATE_ENVIRONMENT.get_template(os.path.join(root,filename)).render({'app' : app})
                         f.write(filer)
 
-##        #iterate through our "templates" and render the files passing in the app dictionary
-##        for entry in filesToRender:
-##            output = 'completedBuilds/' + newVersion + '/' +  entry
-##            with open(os.path.join(PATH,output), 'w') as f:
-##                entry = 'androidBase/' + entry
-##                tempNameArray = entry.split('/')
-#                tempName = tempNameArray[len(tempNameArray)-1]
-#                filer = TEMPLATE_ENVIRONMENT.get_template(tempName).render({'app' : app})
-#                f.write(filer)
-#

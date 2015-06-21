@@ -38,8 +38,8 @@ import fragments.NavigationDrawerFragment;
 import fragments.PunchCardFragment;
 import managers.menuManager;
 import managers.userManager;
-import punchbug.test_restaurant.NavigationDrawerCallbacks;
-import punchbug.test_restaurant.R;
+import punchbug.sunnincafe.NavigationDrawerCallbacks;
+import punchbug.sunnincafe.R;
 
 
 public class MainActivity extends ActionBarActivity implements NavigationDrawerCallbacks {
@@ -159,7 +159,7 @@ public class MainActivity extends ActionBarActivity implements NavigationDrawerC
                      //   .commit();
                 break;
             case 3:
-                startActivity(newPhoneCallIntent(8554654654));
+                startActivity(newPhoneCallIntent("8554654654"));
                 break;
             case 4:
                 //fragmentManager.beginTransaction().replace(R.id.container, OurStoryFragment.newInstance(position + 1))

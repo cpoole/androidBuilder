@@ -32,13 +32,13 @@
     <string-array
         name="pager_adapter_titles">
         
-        <itemAppetizer></item>
+        <item>Appetizer></item>
         
-        <itemSoups and Salads></item>
+        <item>Soups and Salads></item>
         
-        <itemSides></item>
+        <item>Sides></item>
         
-        <itemEntree></item>
+        <item>Entree></item>
         
     </string-array>
 

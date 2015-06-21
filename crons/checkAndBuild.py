@@ -6,6 +6,7 @@ import shutil
 import os.path
 import fnmatch
 import glob
+from subprocess import call
 
 client = MongoClient()
 client = MongoClient('localhost',27017)
@@ -21,9 +22,7 @@ excludeList=[
         'cache.xml',
         'gradle.iml',
         'gradle-wrapper.properties',
-        'gradle-wrapper.jar',
         'proguard-rules.pro',
-        'app.iml',
         '.gitignore',
         'classes.dex',
         'resources-debug-test.ap_',
@@ -31,7 +30,7 @@ excludeList=[
          
         ]
 excludes = [
-        '*build*',
+        '*build/*',
         '*.iml',
         '*.jar',
         '*.png',
@@ -44,8 +43,9 @@ excludes = [
 ]
 
 #This will query the database for any applications that are in status 2 and generate a new build
-
+newVersion = ""
 for app in apps.find():
+    print app
     if(app['statusInt'] == 2):
         #app['_hours'] = hours.find_one({'_id': ObjectId(app['_hours'])})
         #fetch menu for this applicaiton id
@@ -97,4 +97,6 @@ for app in apps.find():
                         #print location
                         filer = TEMPLATE_ENVIRONMENT.get_template(os.path.join(root,filename)).render({'app' : app})
                         f.write(filer)
+print newVersion
+os.system("cd ./completedBuilds/" + newVersion + "/ && ./gradlew assembleDebug")
 

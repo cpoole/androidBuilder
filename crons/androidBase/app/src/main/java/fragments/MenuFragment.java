@@ -1,5 +1,6 @@
 package fragments;
 
+import android.content.Context;
 import android.app.Activity;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -32,7 +33,7 @@ public class MenuFragment extends Fragment {
     public static TextView headerText;
     private String DEBUG_TAG = "sunninCafe";
     private GestureDetectorCompat gestureListener;
-
+    private Context _context;
 
     private RecyclerView mRecyclerView;
     private static final String ARG_SECTION_NUMBER = "section_number";
@@ -64,8 +65,9 @@ public class MenuFragment extends Fragment {
                 return gestureListener.onTouchEvent(event);
             }
         });
-
-        customPagerAdapter = new myPagerAdapter(getActivity().getSupportFragmentManager());
+        if(_context != null){
+          customPagerAdapter = new myPagerAdapter(getActivity().getSupportFragmentManager(),_context);
+        }
         mViewPager.setAdapter(customPagerAdapter);
 
         mSlidingTabStrip = (PagerSlidingTabStrip) rootView.findViewById(R.id.tabs);
@@ -77,6 +79,7 @@ public class MenuFragment extends Fragment {
     @Override
     public void onAttach(Activity activity) {
         super.onAttach(activity);
+        _context = getActivity().getApplicationContext();
         ((MainActivity) activity).onSectionAttached(getArguments().getInt(ARG_SECTION_NUMBER));
 
     }
